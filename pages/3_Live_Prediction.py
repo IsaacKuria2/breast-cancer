@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 from utils.data_loader import load_data, get_features_and_target
+from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(page_title="Live Prediction", page_icon="🧪", layout="wide")
 st.title("🧪 Live Prediction")
@@ -62,3 +63,4 @@ if st.button("🔍 Predict", use_container_width=True):
         "Probability": [round(probability[0], 4), round(probability[1], 4)]
     })
     st.dataframe(prob_df, use_container_width=True)
+    render_comment_sidebar()

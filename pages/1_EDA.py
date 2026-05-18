@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from utils.data_loader import load_data
 from utils.sidebar_comments import render_comment_sidebar
 
-st.set_page_config(page_title="EDA", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="EDA", page_icon="utils/favicon.png", layout="wide")
 st.title("🔍 Exploratory Data Analysis")
 
 df = load_data()

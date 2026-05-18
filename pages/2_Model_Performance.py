@@ -9,6 +9,7 @@ from sklearn.metrics import (
     confusion_matrix, roc_curve, auc
 )
 from utils.data_loader import load_data, get_features_and_target, split_and_scale
+from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(page_title="Model Performance", page_icon="📊", layout="wide")
 st.title("📊 Model Performance Comparison")
@@ -85,3 +86,4 @@ fig_roc.add_trace(go.Scatter(x=[0,1], y=[0,1], mode="lines",
                               line=dict(dash="dash", color="gray"), name="Random"))
 fig_roc.update_layout(xaxis_title="False Positive Rate", yaxis_title="True Positive Rate")
 st.plotly_chart(fig_roc, use_container_width=True)
+render_comment_sidebar()

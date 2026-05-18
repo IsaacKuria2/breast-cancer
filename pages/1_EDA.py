@@ -54,5 +54,4 @@ sns.heatmap(df.drop(columns=["diagnosis_label"]).corr(), cmap="coolwarm", ax=ax,
             annot=False, linewidths=0.5)
 st.pyplot(fig4)
 handle_navigation()
-render_nav()
 render_comment_sidebar()

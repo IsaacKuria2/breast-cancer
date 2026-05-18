@@ -1,2 +1,7 @@
-echo ".streamlit/secrets.toml" >> .gitignore
-echo ".streamlit/google_credentials.json" >> .gitignore
+.streamlit/secrets.toml
+.streamlit/google_credentials.json
+.streamlit/
+streamlit/
+__pycache__/
+*.pyc
+.DS_Store

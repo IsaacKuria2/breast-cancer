@@ -9,8 +9,8 @@ SCOPES = [
 ]
 
 def get_sheet():
-    creds = Credentials.from_service_account_file(
-        ".streamlit/google_credentials.json", scopes=SCOPES
+    creds = Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"], scopes=SCOPES
     )
     client = gspread.authorize(creds)
     sheet = client.open(st.secrets["SHEET_NAME"]).sheet1

@@ -5,8 +5,8 @@ def render_comment_sidebar():
     st.sidebar.markdown("---")
     st.sidebar.subheader("💬 Leave a Comment")
 
-    name = st.sidebar.text_input("Your name", placeholder="Arap Kiptanui")
-    email = st.sidebar.text_input("Your email", placeholder="Kiptanui@email.com")
+    name = st.sidebar.text_input("Your name", placeholder="name")
+    email = st.sidebar.text_input("Your email", placeholder="email")
     comment = st.sidebar.text_area("Comment", placeholder="Your Thoughts", height=100)
 
     if st.sidebar.button("Submit", use_container_width=True):

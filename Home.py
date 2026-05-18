@@ -14,9 +14,10 @@ render_nav()
 # --- Hero Section ---
 st.markdown("""
 <div style='text-align: center; padding: 2rem 0'>
-    <h1 style='font-size: 3rem;'>🔬 Breast Cancer Classification</h1>
+    <h1 style='font-size: 3rem;'> 🎗️ Early Detection Saves Lives</h1>
     <p style='font-size: 1.3rem; color: gray;'>
-        Can machine learning help detect cancer earlier and more accurately?
+        I built this dashboard to raise awareness about breast cancer and show how technology 
+        can help us understand the importance of early detection.
     </p>
 </div>
 """, unsafe_allow_html=True)

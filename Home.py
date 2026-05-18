@@ -1,4 +1,6 @@
 import streamlit as st
+from utils.nav import render_nav 
+from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(
     page_title="Breast Cancer Early Detection",
@@ -6,8 +8,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-from utils.nav import render_nav 
-from utils.sidebar_comments import render_comment_sidebar
 
 # --- Hero Section ---
 st.markdown("""

@@ -4,6 +4,7 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 from utils.data_loader import load_data
+from utils.nav import render_nav
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(page_title="EDA", page_icon="resources/favicon.png", layout="wide")
@@ -52,4 +53,5 @@ fig4, ax = plt.subplots(figsize=(14, 10))
 sns.heatmap(df.drop(columns=["diagnosis_label"]).corr(), cmap="coolwarm", ax=ax,
             annot=False, linewidths=0.5)
 st.pyplot(fig4)
+render_nav()
 render_comment_sidebar()

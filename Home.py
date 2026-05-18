@@ -1,9 +1,10 @@
 import streamlit as st
+
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(
-    page_title="Breast Cancer Classification Dashboard",
-    page_icon="resources/favicon.png",
+    page_title="Breast Cancer Early Detection",
+    page_icon="💗",                    # Changed to emoji for reliability
     layout="wide",
     initial_sidebar_state="expanded",
 )

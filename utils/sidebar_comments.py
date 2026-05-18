@@ -7,7 +7,7 @@ def render_comment_sidebar():
 
     name = st.sidebar.text_input("Your name", placeholder="Arap Kiptanui")
     email = st.sidebar.text_input("Your email", placeholder="Kiptanui@email.com")
-    comment = st.sidebar.text_area("Comment", placeholder="What do you think?", height=100)
+    comment = st.sidebar.text_area("Comment", placeholder="Your Thoughts", height=100)
 
     if st.sidebar.button("Submit", use_container_width=True):
         if name.strip() and email.strip() and comment.strip():

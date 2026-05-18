@@ -14,7 +14,7 @@ render_nav()
 # --- Hero Section ---
 st.markdown("""
 <div style='text-align: center; padding: 2rem 0'>
-    <h1 style='font-size: 3rem;'>🎗️ Early Detection Saves Lives</h1>
+    <h1 style='font-size: 3rem;'> Early Detection Saves Lives</h1>
     <p style='font-size: 1.3rem; color: gray;'>
         Behind every data point is a real person. This is my small contribution to changing that story.
     </p>

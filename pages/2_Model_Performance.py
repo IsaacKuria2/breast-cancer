@@ -12,7 +12,7 @@ from utils.data_loader import load_data, get_features_and_target, split_and_scal
 from utils.nav import render_nav
 from utils.sidebar_comments import render_comment_sidebar
 
-st.set_page_config(page_title="Model Performance", page_icon="💗", layout="wide")
+st.set_page_config(page_title="Model Performance", page_icon="🎗️", layout="wide")
 render_nav()
 
 st.title("📊 Model Performance Comparison")

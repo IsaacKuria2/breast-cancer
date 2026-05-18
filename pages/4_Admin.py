@@ -1,19 +1,23 @@
 import streamlit as st
 import pandas as pd
 from utils.comments import load_comments, delete_comment, save_reply
+from utils.nav import render_nav, handle_navigation
 
 st.set_page_config(page_title="Admin", page_icon="🔐", layout="wide")
+
+handle_navigation()
+render_nav()
+
 st.title("🔐 Admin Panel")
 
 password = st.text_input("Enter admin password", type="password")
-
 if password != st.secrets["ADMIN_PASSWORD"]:
     st.warning("Enter the correct password to access this panel.")
     st.stop()
 
 st.success("✅ Access granted!")
-comments = load_comments()
 
+comments = load_comments()
 if not comments:
     st.info("No comments yet.")
     st.stop()
@@ -35,7 +39,6 @@ for i, c in enumerate(comments):
         st.markdown(f"**Comment:** {c['comment']}")
         if c.get("reply"):
             st.markdown(f"**Your reply:** {c['reply']}")
-
         reply_text = st.text_input(f"Reply to {c['name']}", key=f"reply_{i}")
         col1, col2 = st.columns(2)
         with col1:

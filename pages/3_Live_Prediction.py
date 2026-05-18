@@ -3,9 +3,14 @@ import pickle
 import numpy as np
 import pandas as pd
 from utils.data_loader import load_data, get_features_and_target
+from utils.nav import render_nav, handle_navigation
 from utils.sidebar_comments import render_comment_sidebar
 
-st.set_page_config(page_title="Live Prediction", page_icon="resources/favicon.png", layout="wide")
+st.set_page_config(page_title="Live Prediction", page_icon="💗", layout="wide")
+
+handle_navigation()
+render_nav()
+
 st.title("🧪 Live Prediction")
 st.markdown("Adjust the feature sliders and click **Predict** to classify a tumor.")
 
@@ -20,6 +25,7 @@ with open("models/scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 
 selected_model = st.sidebar.selectbox("Choose a model", list(model_options.keys()))
+
 with open(model_options[selected_model], "rb") as f:
     model = pickle.load(f)
 
@@ -32,7 +38,6 @@ feature_names = X.columns.tolist()
 st.subheader("Input Features")
 cols = st.columns(3)
 user_input = {}
-
 for i, feature in enumerate(feature_names):
     col = cols[i % 3]
     min_val = float(X[feature].min())
@@ -63,4 +68,5 @@ if st.button("🔍 Predict", use_container_width=True):
         "Probability": [round(probability[0], 4), round(probability[1], 4)]
     })
     st.dataframe(prob_df, use_container_width=True)
-    render_comment_sidebar()
+
+render_comment_sidebar()    # ← moved outside the if block so it always shows

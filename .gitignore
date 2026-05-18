@@ -1,0 +1,2 @@
+echo ".streamlit/secrets.toml" >> .gitignore
+echo ".streamlit/google_credentials.json" >> .gitignore

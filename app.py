@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(
     page_title="Breast Cancer Classification Dashboard",
@@ -100,3 +101,4 @@ st.markdown("""
     Dataset: Wisconsin Breast Cancer Dataset (Kaggle)
 </div>
 """, unsafe_allow_html=True)
+render_comment_sidebar()

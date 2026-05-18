@@ -9,13 +9,9 @@ from sklearn.metrics import (
     confusion_matrix, roc_curve, auc
 )
 from utils.data_loader import load_data, get_features_and_target, split_and_scale
-from utils.nav import render_nav, handle_navigation
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(page_title="Model Performance", page_icon="💗", layout="wide")
-
-handle_navigation()
-render_nav()
 
 st.title("📊 Model Performance Comparison")
 

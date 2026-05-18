@@ -3,13 +3,9 @@ import pickle
 import numpy as np
 import pandas as pd
 from utils.data_loader import load_data, get_features_and_target
-from utils.nav import render_nav, handle_navigation
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(page_title="Live Prediction", page_icon="💗", layout="wide")
-
-handle_navigation()
-render_nav()
 
 st.title("🧪 Live Prediction")
 st.markdown("Adjust the feature sliders and click **Predict** to classify a tumor.")
@@ -69,4 +65,4 @@ if st.button("🔍 Predict", use_container_width=True):
     })
     st.dataframe(prob_df, use_container_width=True)
 
-render_comment_sidebar()    # ← moved outside the if block so it always shows
+render_comment_sidebar()

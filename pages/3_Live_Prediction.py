@@ -179,3 +179,11 @@ if st.button("🔍 Run Prediction", use_container_width=True):
     """)
 
 render_comment_sidebar()
+
+# --- Footer ---
+st.markdown("""
+<div style='text-align: center; color: gray; font-size: 0.9rem;'>
+    Machine Learning & Data Science by <a href='https://www.linkedin.com/in/kuriaspace' target='_blank'>Isaac Kuria</a><br>
+    Dataset: Wisconsin Breast Cancer Dataset
+</div>
+""", unsafe_allow_html=True)

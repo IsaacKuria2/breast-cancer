@@ -9,6 +9,25 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+
+from streamlit_option_menu import option_menu
+
+st.set_page_config(
+    page_title="Breast Cancer App",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+with st.sidebar:
+    page = option_menu(
+        menu_title="Navigation",
+        options=["Home", "EDA", "Performance", "Prediction", "Admin"],
+        icons=["house", "bar-chart", "graph-up", "activity", "gear"],
+        default_index=0
+    )
+
+
+
 # --- Hero Section ---
 st.markdown("""
 <div style='text-align: center; padding: 2rem 0'>

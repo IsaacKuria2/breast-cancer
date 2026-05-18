@@ -9,6 +9,13 @@ PAGES = {
 }
 
 def render_nav():
-    st.sidebar.markdown("## Breast Cancer Early Detection")
-    selection = st.sidebar.selectbox("", list(PAGES.keys()))
+    st.sidebar.markdown("## 💗 Dashboard")
+    for label, path in PAGES.items():
+        if st.sidebar.button(label, use_container_width=True, key=f"nav_{label}"):
+            st.session_state["_navigate_to"] = path
     st.sidebar.markdown("---")
+
+def handle_navigation():
+    if "_navigate_to" in st.session_state:
+        path = st.session_state.pop("_navigate_to")
+        st.switch_page(path)

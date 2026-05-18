@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 
 from utils.sidebar_comments import render_comment_sidebar
 
@@ -10,13 +11,8 @@ st.set_page_config(
 )
 
 
-from streamlit_option_menu import option_menu
 
-st.set_page_config(
-    page_title="Breast Cancer App",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
 
 with st.sidebar:
     page = option_menu(

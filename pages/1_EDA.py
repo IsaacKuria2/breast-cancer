@@ -7,7 +7,11 @@ from utils.data_loader import load_data
 from utils.nav import render_nav, handle_navigation
 from utils.sidebar_comments import render_comment_sidebar
 
-st.set_page_config(page_title="EDA", page_icon="resources/favicon.png", layout="wide")
+st.set_page_config(page_title="EDA", page_icon="💗", layout="wide")
+
+handle_navigation()    
+render_nav()         
+
 st.title("🔍 Exploratory Data Analysis")
 
 df = load_data()
@@ -53,5 +57,5 @@ fig4, ax = plt.subplots(figsize=(14, 10))
 sns.heatmap(df.drop(columns=["diagnosis_label"]).corr(), cmap="coolwarm", ax=ax,
             annot=False, linewidths=0.5)
 st.pyplot(fig4)
-handle_navigation()
-render_comment_sidebar()
+
+render_comment_sidebar() 

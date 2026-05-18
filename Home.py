@@ -1,13 +1,16 @@
 import streamlit as st
-from utils.nav import render_nav 
+from utils.nav import render_nav, handle_navigation    
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(
     page_title="Breast Cancer Early Detection",
-    page_icon="💗",                    # Changed to emoji for reliability
+    page_icon="💗",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+handle_navigation() 
+render_nav()           
 
 # --- Hero Section ---
 st.markdown("""
@@ -49,7 +52,6 @@ st.markdown("---")
 
 # --- What's Inside ---
 st.subheader("🗺️ What You Can Explore")
-
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -102,5 +104,5 @@ st.markdown("""
     Dataset: Wisconsin Breast Cancer Dataset (Kaggle)
 </div>
 """, unsafe_allow_html=True)
-render_nav()
+
 render_comment_sidebar()

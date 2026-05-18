@@ -5,3 +5,6 @@ streamlit/
 __pycache__/
 *.pyc
 .DS_Storesecrets.toml
+.DS_Store
+*.DS_Store
+.streamlit/secrets.toml

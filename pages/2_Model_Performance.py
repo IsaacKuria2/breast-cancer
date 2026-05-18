@@ -11,7 +11,7 @@ from sklearn.metrics import (
 from utils.data_loader import load_data, get_features_and_target, split_and_scale
 from utils.sidebar_comments import render_comment_sidebar
 
-st.set_page_config(page_title="Model Performance", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Model Performance", page_icon="resources/favicon.png", layout="wide")
 st.title("📊 Model Performance Comparison")
 
 # --- Load data & models ---

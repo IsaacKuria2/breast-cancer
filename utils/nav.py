@@ -1,21 +1,22 @@
 import streamlit as st
 
-PAGES = {
-    "🏠 Home": "Home.py",
-    "🔍 EDA": "1_EDA.py",
-    "📊 Model Performance": "2_Model_Performance.py",
-    "🧪 Live Prediction": "3_Live_Prediction.py",
-    "🔐 Admin": "4_Admin.py",
-}
-
 def render_nav():
-    st.sidebar.markdown("## 💗 Dashboard")
-    for label, path in PAGES.items():
-        if st.sidebar.button(label, use_container_width=True, key=f"nav_{label}"):
-            st.session_state["_navigate_to"] = path
-    st.sidebar.markdown("---")
+    st.markdown("""
+    <style>
+    [data-testid="stSidebarNav"] {
+        display: none;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
-def handle_navigation():
-    if "_navigate_to" in st.session_state:
-        path = st.session_state.pop("_navigate_to")
-        st.switch_page(path)
+    with st.sidebar:
+        st.image("resources/favicon.png", width=150)
+        st.markdown("<h3 style='text-align:center; color:#e75480;'>Breast Cancer Early Detection</h3>",
+                    unsafe_allow_html=True)
+        st.markdown("---")
+        st.page_link("Home.py", label="🏠 Home")
+        st.page_link("pages/1_EDA.py", label="🔍 EDA")
+        st.page_link("pages/2_Model_Performance.py", label="📊 Model Performance")
+        st.page_link("pages/3_Live_Prediction.py", label="🧪 Live Prediction")
+        st.page_link("pages/4_Admin.py", label="🔐 Admin")
+        st.markdown("---")

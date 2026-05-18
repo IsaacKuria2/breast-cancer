@@ -1,25 +1,15 @@
 import streamlit as st
 import pandas as pd
 from utils.comments import load_comments, delete_comment, save_reply
+from utils.nav import render_nav
 
 st.set_page_config(page_title="Admin Panel", page_icon="🔐", layout="wide")
+
+render_nav()
 
 # --- Custom Styling ---
 st.markdown("""
 <style>
-[data-testid="stAppViewContainer"] {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-}
-.admin-header {
-    text-align: center;
-    padding: 2rem 0 1rem 0;
-}
-.admin-header h1 {
-    font-size: 3rem;
-    background: linear-gradient(90deg, #e94560, #0f3460);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 .stat-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -27,19 +17,12 @@ st.markdown("""
     padding: 1.2rem;
     text-align: center;
 }
-.comment-card {
-    background: rgba(255,255,255,0.04);
-    border-left: 4px solid #e94560;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
 </style>
 """, unsafe_allow_html=True)
 
 # --- Header ---
 st.markdown("""
-<div class='admin-header'>
+<div style='text-align: center; padding: 2rem 0 1rem 0;'>
     <h1>🔐 Admin Command Center</h1>
     <p style='color: #aaa;'>Manage comments and monitor engagement</p>
 </div>
@@ -51,7 +34,6 @@ st.markdown("---")
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     password = st.text_input("🔑 Enter Admin Password", type="password", placeholder="Password")
-    login_btn = st.button("Unlock Panel", use_container_width=True)
 
 if not password or password != st.secrets["ADMIN_PASSWORD"]:
     st.markdown("""
@@ -141,8 +123,7 @@ for i, c in enumerate(reversed(filtered)):
         if c.get("reply"):
             st.info(f"↩️ **Your reply:** {c['reply']}")
 
-        st.markdown("**Reply:**")
-        reply_text = st.text_area(f"Write reply", key=f"reply_{real_index}",
+        reply_text = st.text_area("Write reply", key=f"reply_{real_index}",
                                   placeholder="Type your reply here...", height=80)
 
         col1, col2 = st.columns(2)

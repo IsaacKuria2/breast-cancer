@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.nav import render_nav
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(
@@ -7,6 +8,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+render_nav()
 
 # --- Hero Section ---
 st.markdown("""

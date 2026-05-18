@@ -3,9 +3,12 @@ import pickle
 import numpy as np
 import pandas as pd
 from utils.data_loader import load_data, get_features_and_target
+from utils.nav import render_nav
 from utils.sidebar_comments import render_comment_sidebar
 
 st.set_page_config(page_title="Live Prediction", page_icon="💗", layout="wide")
+
+render_nav()
 
 st.title("🧪 Live Prediction")
 st.markdown("Adjust the feature sliders and click **Predict** to classify a tumor.")
